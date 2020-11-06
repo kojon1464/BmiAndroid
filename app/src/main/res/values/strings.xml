@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="height_is_empty">Height field is Empty!</string>
+    <string name="empty_value">Not calculated</string>
+    <string name="count_bmi">Count BMI</string>
+    <string name="mass_is_empty">Mass field is empty!</string>
+    <string name="height_lower">"Height field cannot be lower than "</string>
+    <string name="height_grater">"Height filed cannot be grater than "</string>
+    <string name="change_units">Change units</string>
+    <string name="calculate_bmi">Calculate BMI to check your group</string>
+    <string name="bmiGroupNameUnder">Underweight (&lt;18.5) | Bmi: %.2f</string>
+    <string name="bmiGroupNameNormal">Normal weight (18.5–25) | Bmi: %.2f</string>
+    <string name="bmiGroupNameOver">Overweight (25–30) | Bmi: %.2f</string>
+    <string name="bmiGroupNameObese">Obese (&gt;30) | Bmi: %.2f</string>
+    <string name="bmiGroupDesObese">Obesity is a medical condition in which excess body fat has accumulated to the extent that it may have an adverse effect on health. It is defined by body mass index (BMI) and further evaluated in terms of fat distribution via the waist–hip ratio and total cardiovascular risk factors.</string>
+    <string name="bmiGroupDesOver">Being overweight or fat is having more body fat than is optimally healthy. Being overweight is especially common where food supplies are plentiful and lifestyles are sedentary.</string>
+    <string name="bmiGroupDesNormal">A natural healthy weight is the weight your body will maintain with normal eating and normal exercise. Over years of dieting, people rarely have a normal, healthy relationship with food.</string>
+    <string name="bmiGroupDesUnder">Underweight is defined as low weight for age in children and a BMI of &lt;18.5kgm−2 in adults, reflecting a current condition resulting from inadequate food intake, past episodes of undernutrition, or poor health conditions.</string>
+    <string name="history">History</string>
+    <string name="mass">Mass [%s]</string>
+    <string name="height">Height [%s]</string>
+    <string name="history_mass">Mass: %d %s</string>
+    <string name="history_height">Height: %d %s</string>
+    <string name="history_bmi">Bmi: %.2f</string>
+    <string name="empty_history">History is empty!</string>
+    <string name="bmi_group_image_des">Image showing person from calculate bmi group</string>
+    <string name="bmi_icon">Bmi icon</string>
+    <string name="mass_icon">Mass icon</string>
+    <string name="height_icon">Height icon</string>
+</resources>

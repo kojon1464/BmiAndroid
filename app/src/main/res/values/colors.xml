@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorBmiBlue">#183EFF</color>
+    <color name="colorBmiGreen">#0EE633</color>
+    <color name="colorBmiYellow">#FAE418</color>
+    <color name="colorBmiRed">#FF0101</color>
+</resources>

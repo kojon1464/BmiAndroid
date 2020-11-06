@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin">24dp</dimen>
+    <dimen name="margin_distance">8dp</dimen>
+    <dimen name="border">4dp</dimen>
+    <dimen name="icon_big">80dp</dimen>
+    <dimen name="icon_small">50dp</dimen>
+</resources>
