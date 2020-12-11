@@ -91,7 +91,7 @@
         android:layout_marginStart="@dimen/margin_distance"
         android:onClick="viewDescription"
         android:text="@string/empty_value"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="@dimen/text_big"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -103,6 +103,7 @@
         android:layout_width="@dimen/icon_big"
         android:layout_height="@dimen/icon_big"
         android:onClick="viewDescription"
+        app:tint="?attr/colorControlNormal"
         app:layout_constraintBottom_toBottomOf="@+id/bmiTV"
         app:layout_constraintEnd_toStartOf="@+id/bmiTV"
         app:layout_constraintHorizontal_bias="0.5"
@@ -117,6 +118,7 @@
         android:layout_width="@dimen/icon_small"
         android:layout_height="@dimen/icon_small"
         android:layout_marginEnd="@dimen/margin"
+        app:tint="?attr/colorControlNormal"
         app:layout_constraintBottom_toBottomOf="@+id/massET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/massTV"
@@ -128,9 +130,10 @@
         android:layout_width="@dimen/icon_small"
         android:layout_height="@dimen/icon_small"
         android:layout_marginEnd="@dimen/margin"
+        android:contentDescription="@string/height_icon"
+        app:tint="?attr/colorControlNormal"
         app:layout_constraintBottom_toBottomOf="@+id/heightET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/heightTV"
-        app:srcCompat="@drawable/height"
-        android:contentDescription="@string/height_icon" />
+        app:srcCompat="@drawable/height" />
 </androidx.constraintlayout.widget.ConstraintLayout>

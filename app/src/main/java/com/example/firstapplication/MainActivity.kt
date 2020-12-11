@@ -1,8 +1,8 @@
 package com.example.firstapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -13,17 +13,21 @@ import com.example.firstapplication.bmi.BmiInterface
 import com.example.firstapplication.bmi.BmiMetric
 import com.example.firstapplication.bmi.Unit
 import com.example.firstapplication.bmi.group.Groups
+import com.example.firstapplication.database.AppDatabase
+import com.example.firstapplication.database.HistoryEntry
 import com.example.firstapplication.databinding.ActivityMainBinding
-import com.example.firstapplication.history.History
-import com.example.firstapplication.history.HistoryEntry
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
 import java.time.Instant
 import java.util.*
+
 
 const val STATE_BMI = "bmi"
 const val STATE_COLOR = "bmiColor"
 const val STATE_UNIT = "unit"
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : SensorActivity() {
 
     private lateinit var unit: Unit
     private lateinit var bmiCalculator: BmiInterface
@@ -52,8 +56,15 @@ class MainActivity : AppCompatActivity() {
         unit = savedInstanceState.getSerializable(STATE_UNIT) as Unit
         setUnits(unit)
 
-        binding.bmiTV.text = savedInstanceState.getString(STATE_BMI)
-        binding.bmiTV.setTextColor(savedInstanceState.getInt(STATE_COLOR))
+        val text = savedInstanceState.getString(STATE_BMI)
+        binding.bmiTV.text = text
+        if(text == getString(R.string.empty_value)){
+            val typedValue = TypedValue()
+            theme.resolveAttribute(R.attr.colorControlNormal, typedValue, true)
+            binding.bmiTV.setTextColor(getColor(typedValue.resourceId))
+        } else {
+            binding.bmiTV.setTextColor(savedInstanceState.getInt(STATE_COLOR))
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -132,14 +143,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun saveInHistory(mass: Int, height: Int, bmi: Double) {
-        val history = History.getHistory()
-
-        history.add(0, HistoryEntry(mass, height, bmi, Instant.now().toEpochMilli(), unit))
-        if(history.size > 10) {
-            history.removeAt(history.size - 1)
+        val historyEntry = HistoryEntry(0, mass, height, bmi, Instant.now().toEpochMilli(), unit)
+        CoroutineScope(IO).launch {
+            AppDatabase.getInstance(applicationContext).historyDao().insert(historyEntry)
         }
-
-        History.saveHistory(history)
     }
 
     fun viewDescription(view: View) {

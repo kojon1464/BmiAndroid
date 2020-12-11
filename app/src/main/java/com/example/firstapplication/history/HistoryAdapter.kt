@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firstapplication.App
 import com.example.firstapplication.R
+import com.example.firstapplication.database.HistoryEntry
 import java.text.DateFormat
 import java.util.*
 

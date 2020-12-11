@@ -1,6 +1,5 @@
 package com.example.firstapplication
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.example.firstapplication.bmi.group.Group
@@ -8,7 +7,7 @@ import com.example.firstapplication.bmi.group.Groups
 import com.example.firstapplication.databinding.ActivityDescriptionBinding
 import java.util.*
 
-class DescriptionActivity : AppCompatActivity() {
+class DescriptionActivity : SensorActivity() {
 
     private lateinit var group: Group
     private lateinit var binding: ActivityDescriptionBinding
